@@ -4,6 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import AetherChatWidget from '../components/aether/AetherChatWidget';
 import { Separator } from "@/components/ui/separator";
+import { MessageCircle } from "lucide-react"; // Add this import for the MessageCircle icon
 
 const AetherAssistantPage = () => {
   return (
