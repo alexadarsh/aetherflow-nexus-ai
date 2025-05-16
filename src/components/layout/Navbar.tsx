@@ -1,9 +1,10 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,7 +18,14 @@ const Navbar = () => {
     { name: "Architecture", href: "#architecture" },
     { name: "Roadmap", href: "#roadmap" },
     { name: "About", href: "#about" },
+    { name: "Meet Aether", href: "/aether-assistant" },
   ];
+
+  const toggleAetherChat = () => {
+    // This is a placeholder - the actual event will be handled by the AetherProvider
+    const event = new CustomEvent('toggle-aether-chat');
+    window.dispatchEvent(event);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -41,6 +49,15 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="flex items-center gap-1.5"
+            onClick={toggleAetherChat}
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>Chat with Aether</span>
+          </Button>
           <Button variant="outline">Log In</Button>
           <Button className="bg-gradient-cta text-white hover:opacity-90 transition-opacity">
             Get Early Access
@@ -72,6 +89,17 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex flex-col gap-4 mt-4">
+            <Button 
+              variant="ghost" 
+              className="flex items-center justify-center gap-2 w-full"
+              onClick={() => {
+                toggleAetherChat();
+                setMobileMenuOpen(false);
+              }}
+            >
+              <MessageCircle className="h-4 w-4" />
+              <span>Chat with Aether</span>
+            </Button>
             <Button variant="outline" className="w-full">Log In</Button>
             <Button className="w-full bg-gradient-cta text-white hover:opacity-90 transition-opacity">
               Get Early Access
