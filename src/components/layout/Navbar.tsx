@@ -18,6 +18,7 @@ const Navbar = () => {
     { name: "Features", href: "/features" },
     { name: "Architecture", href: "/architecture" },
     { name: "Roadmap", href: "/roadmap" },
+    { name: "See Demo", href: "/see-demo" },
     { name: "About", href: "/about" },
     { name: "Meet Aether", href: "/aether-assistant" },
   ];

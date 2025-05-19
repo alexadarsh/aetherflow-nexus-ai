@@ -13,6 +13,7 @@ import RoadmapPage from "./pages/roadmap";
 import AboutPage from "./pages/about";
 import LoginPage from "./pages/login";
 import EarlyAccessPage from "./pages/early-access";
+import SeeDemoPage from "./pages/see-demo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/early-access" element={<EarlyAccessPage />} />
+            <Route path="/see-demo" element={<SeeDemoPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
